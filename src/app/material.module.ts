@@ -1,7 +1,15 @@
 import { NgModule } from "@angular/core";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+const MaterialModules = [
+    MatButtonModule,
+    MatIconModule
+];
 
 @NgModule({
-    imports: []
+    imports: [MaterialModules],
+    exports: [MaterialModules]
 })
 export class MaterialModule {
 
