@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
+import { UIService } from './shared/ui.service';
 
 
 
@@ -54,7 +55,7 @@ import { environment } from '../environments/environment';
     AngularFireStorageModule,
     AngularFireAuthModule
   ],
-  providers: [TrainingService],
+  providers: [TrainingService, UIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
