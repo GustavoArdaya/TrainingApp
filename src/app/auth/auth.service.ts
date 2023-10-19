@@ -1,10 +1,10 @@
 import { Subject } from 'rxjs-compat/Subject';
 import { Injectable } from "@angular/core";
 import { AuthData } from "./auth-data.model";
-import { User } from "./user.model";
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { TrainingService } from '../training/training.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({providedIn: "root"})
 export class AuthService {
@@ -15,7 +15,8 @@ export class AuthService {
     constructor(
         private router: Router,
         private auth: AngularFireAuth,
-        private trainingService: TrainingService) {
+        private trainingService: TrainingService,
+        private snackBar: MatSnackBar) {
 
     }
 
@@ -41,7 +42,9 @@ export class AuthService {
             ).then(result => {
                 console.log(result);
             }).catch(error => {
-                console.log(error);
+                this.snackBar.open(error.message, null, {
+                    duration: 3000
+                })
             });        
     }
 
@@ -52,7 +55,9 @@ export class AuthService {
             ).then(result => {
                 console.log(result);
             }).catch(error => {
-                console.log(error);
+                this.snackBar.open(error.message, null, {
+                    duration: 3000
+                })
             });
     } 
 
