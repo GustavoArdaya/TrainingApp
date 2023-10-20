@@ -30,14 +30,14 @@ export class TrainingService {
         .collection('availableExercises')
         .snapshotChanges()
         .pipe(
-          map((docArray) => {
-            return docArray.map(doc => {
-              return {
-                id: doc.payload.doc.id,
-                ...(doc.payload.doc.data() as Exercise)
-              };
-            });
-          })
+            map((docArray) => {
+                return docArray.map(doc => {
+                    return {
+                        id: doc.payload.doc.id,
+                        ...(doc.payload.doc.data() as Exercise)
+                    };
+                });
+            })
         )
         .subscribe(exercises => {
             this.uiService.loadingStateChanged.next(false);
