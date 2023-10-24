@@ -25,12 +25,12 @@
             >
             <mat-error *ngIf="passInput.hasError('required')">Should not be empty</mat-error>
         </mat-form-field>
-        <button *ngIf="!isLoading"
+        <button *ngIf="!(isLoading$ | async)"
             type="submit"
             mat-raised-button
             color="primary"
             [disabled]="f.invalid"
         >Submit</button>
-        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
     </form>
 </section>
