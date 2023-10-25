@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { UIService } from 'src/app/shared/ui.service';
-import { Subscription } from 'rxjs-compat/Subscription';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../app.reducer';
 import { Observable } from 'rxjs-compat/observable';
@@ -16,7 +15,6 @@ import { map } from 'rxjs/operators';
 export class LoginComponent implements OnInit{
 
   isLoading$: Observable<boolean>;
-  private loadingSubs: Subscription;
 
   constructor(
     private authService: AuthService,
