@@ -13,7 +13,6 @@ import { Observable } from 'rxjs-compat/observable';
 export class SidenavListComponent implements OnInit{
 
   isAuth$: Observable<boolean>;
-  authSubscription = new Subscription();
   
   @Output() sidenavClose = new EventEmitter();
 
@@ -34,10 +33,6 @@ export class SidenavListComponent implements OnInit{
   onLogout() {
     this.onClose();
     this.authService.logout();
-  }
-
-  ngOnDestroy(): void {
-    this.authSubscription.unsubscribe();
   }
 
 }

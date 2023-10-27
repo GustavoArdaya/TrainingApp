@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TrainingService } from './training.service';
 import { Store } from '@ngrx/store';
 import * as fromTraining from './training.reducer';

@@ -3,7 +3,6 @@ import { TrainingService } from '../training.service';
 import { Exercise } from '../exercise.model';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Subscription } from 'rxjs';
 import { UIService } from 'src/app/shared/ui.service';
 import { Observable } from 'rxjs-compat/observable';
 import * as fromTraining from '../training.reducer';
@@ -20,7 +19,6 @@ export class NewTrainingComponent implements OnInit{
 
   exercises$: Observable<Exercise[]>;
   isLoading$: Observable<boolean>;
-  private exerciseSubscription: Subscription;
   
 
   constructor(
